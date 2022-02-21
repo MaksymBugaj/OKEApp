@@ -21,4 +21,18 @@
     <style name="MarginDefault">
         <item name="android:layout_marginTop">@dimen/margin</item>
     </style>
+
+    <style name="TextViewNormal" parent="MarginStartDefault">
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewSmall" parent="MarginStartDefault">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MarginStartDefault">
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
 </resources>

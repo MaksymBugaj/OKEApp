@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">OKEApp</string>
-    <string name="content_description_end_icon">search</string>
+    <string name="content_description_end_icon">search desc</string>
+    <string name="content_description_img">Image from api</string>
     <string name="search_hint">Search</string>
 </resources>
