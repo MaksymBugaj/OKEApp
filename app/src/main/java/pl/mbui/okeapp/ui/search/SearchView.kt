@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.search_view.*
 import pl.mbui.okeapp.R
 import pl.mbui.okeapp.ui.util.reactive.ReactiveFragment
 
@@ -13,6 +15,7 @@ import pl.mbui.okeapp.ui.util.reactive.ReactiveFragment
 class SearchView : ReactiveFragment() {
 
     private val searchViewModel: SearchViewModel by viewModels()
+    private val searchAdapter: SearchAdapter by lazy { SearchAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,5 +28,14 @@ class SearchView : ReactiveFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        disposable.add(
+            searchViewModel.videos.subscribe {
+
+            }
+        )
+
+        sv_search.addTextChangedListener {
+            searchViewModel.searchVideos(it.toString())
+        }
     }
 }

@@ -33,6 +33,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    flavorDimensions "OKE"
+    productFlavors {
+        dev {
+            dimension "OKE"
+            applicationIdSuffix ".dev"
+            versionNameSuffix = "-dev"
+            resValue "string", "server_address", "https://www.tvmaze.com/"
+        }
+    }
 }
 
 dependencies {
