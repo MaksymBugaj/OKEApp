@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import pl.mbui.okeapp.ui.util.ReactiveFragment
+import pl.mbui.okeapp.R
+import pl.mbui.okeapp.ui.util.reactive.ReactiveFragment
 
 @AndroidEntryPoint
 class SearchView : ReactiveFragment() {
@@ -18,7 +19,7 @@ class SearchView : ReactiveFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.search_view, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

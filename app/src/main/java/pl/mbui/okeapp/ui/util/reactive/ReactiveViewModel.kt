@@ -1,4 +1,4 @@
-package pl.mbui.okeapp.ui.util
+package pl.mbui.okeapp.ui.util.reactive
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
