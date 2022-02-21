@@ -26,6 +26,6 @@ class SearchViewModel @Inject constructor(
     }
 
     private fun validateQuery(query: String): Boolean{
-        return query.isNotEmpty() && query.length > 3
+        return query.isNotEmpty() && query.length >= 3
     }
 }

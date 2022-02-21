@@ -28,11 +28,9 @@ class SearchView : ReactiveFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        disposable.add(
-            searchViewModel.videos.subscribe {
+        sv_recycler.adapter = searchAdapter
 
-            }
-        )
+        disposable.add(searchViewModel.videos.subscribe { searchAdapter.update(it) })
 
         sv_search.addTextChangedListener {
             searchViewModel.searchVideos(it.toString())

@@ -3,7 +3,8 @@ package pl.mbui.okeapp.ui.search
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import okhttp3.internal.concurrent.Task
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.search_adapter_item.view.*
 import pl.mbui.okeapp.R
 import pl.mbui.okeapp.domain.model.ShowModel
 import pl.mbui.okeapp.ui.util.adapter.OverloadAdapter
@@ -21,6 +22,12 @@ class SearchAdapter : OverloadAdapter<ShowModel>(){
     private inner class ItemViewHolder(view: View) : OverloadViewHolder<ShowModel>(view) {
 
         override fun bind(item: ShowModel) {
+            itemView.sai_title.text = item.show.name
+            itemView.sai_genres.text = item.show.genres.reduceOrNull { acc, s -> "$acc, $s" } ?: ""
+
+            Picasso.with(itemView.context)
+                .load(item.show.image.medium)
+                .into(itemView.sai_img)
 
         }
     }

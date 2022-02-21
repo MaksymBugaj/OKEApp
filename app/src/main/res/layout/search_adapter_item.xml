@@ -34,11 +34,11 @@
             app:layout_constraintStart_toEndOf="@id/sai_img"
             app:layout_constraintTop_toTopOf="@id/sai_img"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/sai_description"
+            app:layout_constraintBottom_toTopOf="@id/sai_genres"
             tools:text="ZADANIE 1" />
 
         <TextView
-            android:id="@+id/sai_description"
+            android:id="@+id/sai_genres"
             style="@style/TextViewSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
