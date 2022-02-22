@@ -8,7 +8,6 @@ import io.reactivex.subjects.PublishSubject
 import pl.mbui.okeapp.domain.model.ShowModel
 import pl.mbui.okeapp.domain.usecase.SearchVideosUseCase
 import pl.mbui.okeapp.ui.util.reactive.ReactiveViewModel
-import retrofit2.HttpException
 import timber.log.Timber
 import java.net.UnknownHostException
 import javax.inject.Inject
