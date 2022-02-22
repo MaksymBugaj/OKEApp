@@ -5,10 +5,10 @@ import pl.mbui.okeapp.domain.model.ShowModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface SearchService {
+interface SearchShowsService {
 
     @GET("/search/shows")
-    fun getVideos(
+    fun getShows(
         @Query("q") query: String
     ): Single<List<ShowModel>>
 }

@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import pl.mbui.okeapp.domain.service.SearchService
+import pl.mbui.okeapp.domain.service.SearchShowsService
 import retrofit2.Retrofit
 
 @Module
@@ -12,6 +12,6 @@ import retrofit2.Retrofit
 object ServiceModule {
 
     @Provides
-    fun provideSearchService(retrofit: Retrofit) = retrofit.create(SearchService::class.java)
+    fun provideSearchShowsService(retrofit: Retrofit) = retrofit.create(SearchShowsService::class.java)
 
 }

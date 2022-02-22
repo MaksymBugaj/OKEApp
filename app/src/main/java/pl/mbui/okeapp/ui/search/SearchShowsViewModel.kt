@@ -6,18 +6,18 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 import pl.mbui.okeapp.domain.model.ShowModel
-import pl.mbui.okeapp.domain.usecase.SearchVideosUseCase
+import pl.mbui.okeapp.domain.usecase.SearchShowsUseCase
 import pl.mbui.okeapp.ui.util.reactive.ReactiveViewModel
 import timber.log.Timber
 import java.net.UnknownHostException
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(
-    private val searchVideosUseCase: SearchVideosUseCase
+class SearchShowsViewModel @Inject constructor(
+    private val searchShowsUseCase: SearchShowsUseCase
 ) : ReactiveViewModel() {
 
-    val videos = BehaviorSubject.create<List<ShowModel>>()
+    val shows = BehaviorSubject.create<List<ShowModel>>()
     val networkError = PublishSubject.create<Unit>()
     val showLoadingAnimation = BehaviorSubject.createDefault(false)
 
@@ -25,12 +25,12 @@ class SearchViewModel @Inject constructor(
         if (!validateQuery(query)) return
 
         showLoadingAnimation.onNext(true)
-        searchVideosUseCase.searchVideos(query)
+        searchShowsUseCase.searchShows(query)
             .doOnEvent { _, _ -> showLoadingAnimation.onNext(false) }
             .subscribeBy({
                 Timber.e(it)
                 if (it is UnknownHostException) networkError.onNext(Unit)
-            }, { showModels -> videos.onNext(showModels) })
+            }, { showModels -> shows.onNext(showModels) })
             .addTo(disposable)
     }
 

@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchView">
+    app:startDestination="@id/searchShowsView">
 
 
     <fragment
-        android:id="@+id/searchView"
-        android:name="pl.mbui.okeapp.ui.search.SearchView"
+        android:id="@+id/searchShowsView"
+        android:name="pl.mbui.okeapp.ui.search.SearchShowsView"
         android:label="SearchView" />
 </navigation>
