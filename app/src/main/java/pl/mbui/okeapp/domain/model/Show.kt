@@ -8,7 +8,7 @@ data class Show(
     @SerializedName("genres")
     val genres: List<String>,
     @SerializedName("image")
-    val image: Image,
+    val image: Image?,
     @SerializedName("name")
     val name: String,
 )

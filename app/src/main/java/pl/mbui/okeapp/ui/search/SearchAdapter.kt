@@ -26,7 +26,7 @@ class SearchAdapter : OverloadAdapter<ShowModel>(){
             itemView.sai_genres.text = item.show.genres.reduceOrNull { acc, s -> "$acc, $s" } ?: ""
 
             Picasso.with(itemView.context)
-                .load(item.show.image.medium)
+                .load(item.show.image?.medium?: item.show.image?.original)
                 .into(itemView.sai_img)
 
         }
