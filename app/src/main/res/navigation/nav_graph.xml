@@ -4,9 +4,9 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/searchShowsView">
 
-
     <fragment
         android:id="@+id/searchShowsView"
         android:name="pl.mbui.okeapp.ui.search.SearchShowsView"
         android:label="SearchView" />
+
 </navigation>
